@@ -1,9 +1,9 @@
+import { Title } from "@/components/ui/title/Title";
+
 export default function Home() {
   return (
-    <div className="">
-     <div>
-      <h1>SHOP</h1>
-     </div>
-    </div>
+    <>
+      <Title />
+    </>
   );
 }
