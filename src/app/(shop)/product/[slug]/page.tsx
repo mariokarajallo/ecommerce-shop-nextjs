@@ -1,4 +1,4 @@
-import { QuantitySelector, SizeSelector } from "@/components";
+import { ProductMobileSlideshow, ProductSlideshow, QuantitySelector, SizeSelector } from "@/components";
 import { titleFont } from "@/config/fonts";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
@@ -22,7 +22,11 @@ export default async function ProductSlugPage({ params }: Props) {
     <div className="mt-5 mb-20 grid grid-cols-1 md:grid-cols-3 gap-3">
       {/* Slide show */}
       <div className="col-span-1 md:col-span-2">
-        <p>imagen</p>
+        {/* mobile slideshow */}
+        <ProductMobileSlideshow images={product.images} title={product.title} className="block md:hidden"/>
+
+        {/* desktop slideshow */}
+        <ProductSlideshow images={product.images} title={product.title} className="hidden md:block"/>
       </div>
       {/* Product info */}
       <div className="col-span-3 md:col-span-1">
