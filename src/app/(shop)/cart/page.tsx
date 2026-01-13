@@ -2,6 +2,7 @@ import { QuantitySelector, Title } from "@/components";
 import { initialData } from "@/seed/seed";
 import Link from "next/link";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 const productsInCart = [
   initialData.products[0],
@@ -10,6 +11,8 @@ const productsInCart = [
 ];
 
 export default function CartPage() {
+  //redirect("/empty");
+
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
       <div className="flex flex-col w-[1000px]">
@@ -56,7 +59,7 @@ export default function CartPage() {
                 ${" "}
                 {productsInCart.reduce(
                   (acc, product) => acc + product.price,
-                  0
+                  0,
                 )}
               </span>
 
@@ -65,7 +68,7 @@ export default function CartPage() {
                 ${" "}
                 {productsInCart.reduce(
                   (acc, product) => acc + product.price,
-                  0
+                  0,
                 ) * 0.15}
               </span>
 
@@ -74,11 +77,11 @@ export default function CartPage() {
                 ${" "}
                 {productsInCart.reduce(
                   (acc, product) => acc + product.price,
-                  0
+                  0,
                 ) +
                   productsInCart.reduce(
                     (acc, product) => acc + product.price,
-                    0
+                    0,
                   ) *
                     0.15}
               </span>
