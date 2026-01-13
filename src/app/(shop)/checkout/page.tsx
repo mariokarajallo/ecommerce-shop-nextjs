@@ -20,7 +20,7 @@ export default function CheckoutPage() {
           <div className="flex flex-col mt-5">
             <span className="text-xl"> Ajustar carrito</span>
             <Link className="underline mb-5" href="/cart">
-                Editar carrito
+              Editar carrito
             </Link>
 
             {/* Items del carrito */}
@@ -55,9 +55,9 @@ export default function CheckoutPage() {
               <p>123456789</p>
             </div>
 
-            <div className="w-full h-0.5 rounded bg-gray-200 mb-10"/>
-
             {/* Resumen de la orden */}
+            <div className="w-full rounded bg-gray-200 mb-10 " />
+
             <h2 className="text-2xl mb-2 font-bold"> Resumen de la orden</h2>
             <div className="grid grid-cols-2">
               <span>Num de items</span>
@@ -68,7 +68,7 @@ export default function CheckoutPage() {
                 ${" "}
                 {productsInCart.reduce(
                   (acc, product) => acc + product.price,
-                  0
+                  0,
                 )}
               </span>
 
@@ -77,7 +77,7 @@ export default function CheckoutPage() {
                 ${" "}
                 {productsInCart.reduce(
                   (acc, product) => acc + product.price,
-                  0
+                  0,
                 ) * 0.15}
               </span>
 
@@ -86,23 +86,27 @@ export default function CheckoutPage() {
                 ${" "}
                 {productsInCart.reduce(
                   (acc, product) => acc + product.price,
-                  0
+                  0,
                 ) +
                   productsInCart.reduce(
                     (acc, product) => acc + product.price,
-                    0
+                    0,
                   ) *
                     0.15}
               </span>
             </div>
 
             <div className="mt-5 mb-5 w-full">
-{/* disclaimer */}
-                <p className="mb-5">
-                    <span className="text-xs">
-                        Al hacer clic en Colocar Orden, aceptas los <a href="#" className="underline">Términos y Condiciones</a> de la tienda.
-                    </span>
-                </p>
+              {/* disclaimer */}
+              <p className="mb-5">
+                <span className="text-xs">
+                  Al hacer clic en Colocar Orden, aceptas los{" "}
+                  <a href="#" className="underline">
+                    Términos y Condiciones
+                  </a>{" "}
+                  de la tienda.
+                </span>
+              </p>
               <Link
                 href="/orders/123"
                 className="flex btn-primary justify-center"
